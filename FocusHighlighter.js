@@ -1,4 +1,4 @@
-module.exports = class FocusHighlighter {
+export default class FocusHighlighter {
 	constructor(highlighterDomNode) {
 		this.highlighter = highlighterDomNode;
 

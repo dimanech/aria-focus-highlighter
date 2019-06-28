@@ -7,9 +7,34 @@
 	<title>Document</title>
 </head>
 <body>
-
 	<h1>Tab highlighter</h1>
+ 
 	<p>Lorem ipsum <a href="#some">Some linke</a></p>
-	
+    <form action="">
+        <input type="text">
+        <br>
+        <input type="number">
+        <br>
+        <input type="password">
+        <br>
+        <input type="file">
+        <br>
+        <button>Submit</button>
+        <br>
+        <input type="submit">
+    </form>
+    
+    <div tabindex="0">
+        Some custom focusable element
+    </div>
+    
+    <button>Some button</button>
+    
+    
+    <div class="b-highlighter" data-focus-highlighter></div>
+    <script type="module">
+        import FocusHighlighter from './FocusHighlighter.js';
+        new FocusHighlighter(document.querySelector('[data-focus-highlighter]')).init();
+    </script>
 </body>
 </html>
