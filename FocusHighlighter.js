@@ -73,7 +73,7 @@ export default class FocusHighlighter {
 		const focusedElement = document.activeElement;
 
 		if (!this.isValidTarget(focusedElement) ||
-				(FocusHighlighter.isTextInput(focusedElement) && !this.keyboardModality)) {
+			(FocusHighlighter.isTextInput(focusedElement) && !this.keyboardModality)) {
 			return;
 		}
 
@@ -128,16 +128,16 @@ export default class FocusHighlighter {
 
 	isValidTarget(domNode) {
 		return !!(domNode &&
-				domNode !== this.lastFocusedElement &&
-				domNode !== document &&
-				domNode.nodeName !== 'HTML' &&
-				domNode.nodeName !== 'BODY'
+			domNode !== this.lastFocusedElement &&
+			domNode !== document &&
+			domNode.nodeName !== 'HTML' &&
+			domNode.nodeName !== 'BODY'
 		);
 	}
 
 	static isTextInput(domNode) {
 		return !!((domNode.tagName === 'TEXTAREA' && !domNode.readOnly) ||
-				(domNode.tagName === 'INPUT' && !domNode.readOnly) ||
-				domNode.getAttribute('contenteditable'));
+			(domNode.tagName === 'INPUT' && !domNode.readOnly) ||
+			domNode.getAttribute('contenteditable'));
 	}
 };
